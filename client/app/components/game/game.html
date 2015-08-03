@@ -1,0 +1,17 @@
+<div class="game">
+    <header class="game-header">
+        <h1>PictureMatch</h1>
+    </header>
+    <div class="game-settings">
+        <settings on-start-game="game.startGame()" is-game-finished="game.isGameFinished"></settings>
+    </div>
+    <div class="game-field">
+        <div class="game-cards">
+            <card data="card"
+                  ng-repeat="card in game.cards"
+                  ng-click="game.cardClick(card)"
+                  ng-class="{'m-selected': game.isCardSelected(card), 'm-paired': game.isCardPaired(card)}">
+            </card>
+        </div>
+    </div>
+</div>

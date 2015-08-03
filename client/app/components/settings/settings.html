@@ -1,0 +1,10 @@
+<div class="settings">
+    <div ng-show="settings.isGameFinished">
+        You win!
+    </div>
+    <p><a href="">Enter Instagram username</a> or <a href="">play with popular photos</a></p>
+    <form method="post" ng-submit="settings.settingsFormSubmit()">
+        <input type="text" name="username" id="username" ng-model="settings.username"/>
+        <button>Start new game</button>
+    </form>
+</div>
