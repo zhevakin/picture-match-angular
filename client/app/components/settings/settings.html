@@ -2,9 +2,23 @@
     <div ng-show="settings.isGameFinished">
         You win!
     </div>
-    <p><a href="">Enter Instagram username</a> or <a href="">play with popular photos</a></p>
-    <form method="post" ng-submit="settings.settingsFormSubmit()">
-        <input type="text" name="username" id="username" ng-model="settings.username"/>
-        <button>Start new game</button>
-    </form>
+    <p><a href="" ng-click="settings.setGameMode('user')">Enter Instagram username</a><br/>
+        - or - <br/>
+        <a href="" ng-click="settings.setGameMode('popular')">play with popular photos</a>
+    </p>
+
+    <div ng-show="settings.gameMode === 'user'">
+        <!-- /input-group -->
+        <form method="post" ng-submit="settings.settingsFormSubmit()">
+            <div class="input-group">
+                <input class="form-control" type="text" name="username" id="username" ng-model="settings.username" placeholder="Username"/>
+                  <span class="input-group-btn">
+                    <button class="btn btn-success" type="submit">Start new game</button>
+                  </span>
+            </div>
+        </form>
+    </div>
+    <div ng-show="settings.gameMode === 'popular'">
+        <button class="btn btn-success" ng-click="settings.startGame()" type="button">Start new game</button>
+    </div>
 </div>

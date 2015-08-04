@@ -2,53 +2,63 @@ import angular from 'angular';
 
 const clientId = '75eea1f2dc3a4a37a5806e031a1a1faa';
 
-let shuffleArray = function (array) {
-    var m = array.length, t, i;
-
-    // While there remain elements to shuffle
-    while (m) {
-        // Pick a remaining element…
-        i = Math.floor(Math.random() * m--);
-
-        // And swap it with the current element.
-        t = array[m];
-        array[m] = array[i];
-        array[i] = t;
-    }
-
-    return array;
-};
-
-let doubleArray = function (array) {
-
-    return array;
-};
-
 let Game = (instagram) => {
-    let cards = [],
-        card1,
-        card2;
+    let cards = [];
 
-    let loadCards = (callback) => {
+    let shuffleArray = function (array) {
+        let m = array.length, t, i;
+        while (m) {
+            i = Math.floor(Math.random() * m--);
+            t = array[m];
+            array[m] = array[i];
+            array[i] = t;
+        }
+        return array;
+    };
 
-        instagram.fetchPopular((data) => {
-            data.length = 10;
+    let getPhotos = (gameMode, username, callback) => {
 
-            let dataCopy = angular.copy(data);
+        if (gameMode == 'user') {
+            instagram.getUserPhotos(username, (data) => {
+                data.length = 10;
 
-            data = data.concat(dataCopy);
+                let dataCopy = angular.copy(data);
 
-            let i = 0;
-            data.map((item) => {
-                item.index = i;
-                i++;
+                data = data.concat(dataCopy);
+
+                let i = 0;
+                data.map((item) => {
+                    item.index = i;
+                    i++;
+                });
+
+                data = shuffleArray(data);
+                console.log(data);
+
+                callback(data);
             });
+        } else if (gameMode == 'popular') {
+            instagram.getPopularPhotos((data) => {
+                data.length = 10;
 
-            data = shuffleArray(data);
-            console.log(data);
+                let dataCopy = angular.copy(data);
 
-            callback(data);
-        });
+                data = data.concat(dataCopy);
+
+                let i = 0;
+                data.map((item) => {
+                    item.index = i;
+                    i++;
+                });
+
+                data = shuffleArray(data);
+                console.log(data);
+
+                callback(data);
+            });
+        } else {
+
+        }
 
     };
 
@@ -56,8 +66,9 @@ let Game = (instagram) => {
         return cards;
     };
 
+
     return {
-        loadCards,
+        getPhotos,
         getState
     };
 };

@@ -9,8 +9,10 @@ let SettingsComponent = function () {
         controllerAs: 'settings',
         bindToController: true,
         scope: {
+            gameMode: '=',
             isGameFinished: '=',
-            startGame: '&onStartGame'
+            startGame: '&onStartGame',
+            username: '='
         },
         restrict: 'E',
         replace: true

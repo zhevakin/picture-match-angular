@@ -1,9 +1,15 @@
 <div class="game">
-    <header class="game-header">
-        <h1>PictureMatch</h1>
-    </header>
-    <div class="game-settings">
-        <settings on-start-game="game.startGame()" is-game-finished="game.isGameFinished"></settings>
+    <div class="game-menu">
+        <header class="game-header">
+            <h1>PictureMatch</h1>
+        </header>
+        <div class="game-settings">
+            <settings game-mode="game.gameMode"
+                      on-start-game="game.startGame()"
+                      is-game-finished="game.isGameFinished"
+                      username="game.username">
+            </settings>
+        </div>
     </div>
     <div class="game-field">
         <div class="game-cards">

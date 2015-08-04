@@ -10,10 +10,13 @@ class GameController {
         this.card2 = null;
         this.pairedCardsIds = [];
         this.isGameFinished = false;
+
+        this.gameMode = 'user';
+        this.username = 'privatekanye';
     }
 
     startGame() {
-        this.gameService.loadCards((data) => {
+        this.gameService.getPhotos(this.gameMode, this.username, (data) => {
             // Load cards data
             this.cards = data;
 
@@ -53,7 +56,7 @@ class GameController {
             if (this.card1.id === this.card2.id) {
                 this.pairedCardsIds.push(card.id);
                 if (this.pairedCardsIds.length === this.cards.length / 2) {
-                    this.win();
+                    this.gameFinished();
                 }
             }
 
@@ -64,7 +67,7 @@ class GameController {
         }
     }
 
-    win() {
+    gameFinished() {
         this.isGameFinished = true;
     }
 

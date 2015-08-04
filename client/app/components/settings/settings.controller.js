@@ -1,6 +1,5 @@
 class SettingsController {
     constructor(gameService) {
-        this.username = 'Xvakin';
         this.gameService = gameService;
     }
 
@@ -8,6 +7,11 @@ class SettingsController {
         console.log('Submit!');
         this.startGame();
     }
+
+    setGameMode(mode) {
+        this.gameMode = mode;
+    }
+
 }
 
 SettingsController.$inject = ['gameService'];
