@@ -1,7 +1,5 @@
 <div class="settings">
-    <div ng-show="settings.isGameFinished">
-        You win!
-    </div>
+
     <p><a href="" ng-click="settings.setGameMode('user')">Enter Instagram username</a><br/>
         - or - <br/>
         <a href="" ng-click="settings.setGameMode('popular')">play with popular photos</a>
@@ -21,4 +19,14 @@
     <div ng-show="settings.gameMode === 'popular'">
         <button class="btn btn-success" ng-click="settings.startGame()" type="button">Start new game</button>
     </div>
+
+    <div class="settings-status">
+        <div ng-show="settings.isGameFinished">
+            You win!
+        </div>
+        <div ng-show="!settings.isGameFinished">
+            Pairs remained: {{ settings.remainingPairsNum }}
+        </div>
+    </div>
+
 </div>
