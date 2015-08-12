@@ -1,4 +1,4 @@
-import './game.less';
+import './game.css';
 import template from './game.html';
 import {GameController as controller} from './game.controller';
 

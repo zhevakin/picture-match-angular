@@ -1,4 +1,4 @@
-import './card.less';
+import './card.css';
 import template from './card.html';
 import {CardController as controller} from './card.controller';
 

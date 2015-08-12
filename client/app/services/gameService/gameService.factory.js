@@ -33,7 +33,6 @@ let Game = (instagram) => {
                 });
 
                 data = shuffleArray(data);
-                console.log(data);
 
                 callback(data);
             });
@@ -52,7 +51,6 @@ let Game = (instagram) => {
                 });
 
                 data = shuffleArray(data);
-                console.log(data);
 
                 callback(data);
             });

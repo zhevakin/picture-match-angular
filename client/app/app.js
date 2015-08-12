@@ -1,4 +1,4 @@
-import './app.less';
+import './app.css';
 import angular from 'angular';
 import {gameModule, settingsModule, cardModule} from './components/components';
 import {gameServiceModule, instagramModule} from './services/services';

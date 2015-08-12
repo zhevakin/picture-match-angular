@@ -1,0 +1,37 @@
+.game {
+  background: #eee;
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+  width: 100%;
+}
+
+.game-menu {
+  padding: 0 10px;
+  position: relative;
+  width: 280px;
+}
+
+.game-menu-footer {
+  bottom: 0;
+  position: absolute;
+  padding: 0 0 10px;
+  width: 100%;
+}
+
+.game-header {
+
+}
+
+.game-settings {
+
+}
+
+.game-field {
+  padding: 20px 10px 0;
+  flex: 1;
+}
+
+.game-cards {
+
+}

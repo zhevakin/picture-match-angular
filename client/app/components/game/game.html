@@ -1,5 +1,5 @@
 <div class="game">
-    <div class="game-menu">
+    <div class="game-menu text-center">
         <header class="game-header">
             <h1>PictureMatch</h1>
         </header>
@@ -7,9 +7,14 @@
             <settings game-mode="game.gameMode"
                       on-start-game="game.startGame()"
                       is-game-finished="game.isGameFinished"
-                      username="game.username">
+                      username="game.username"
+                      remaining-pairs-num="game.remainingPairsNum">
             </settings>
         </div>
+        <footer class="game-menu-footer">
+            Developed by <a href="http://xvakin.ru">Ivan Zhevakin</a> <br/>
+            <a href="https://github.com/Xvakin/picture-match-angular" target="_blank">GitHub repo</a>
+        </footer>
     </div>
     <div class="game-field">
         <div class="game-cards">

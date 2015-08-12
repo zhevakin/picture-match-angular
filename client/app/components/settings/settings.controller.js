@@ -4,7 +4,6 @@ class SettingsController {
     }
 
     settingsFormSubmit() {
-        console.log('Submit!');
         this.startGame();
     }
 

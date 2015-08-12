@@ -1,4 +1,4 @@
-import './settings.less';
+import './settings.css';
 import template from './settings.html';
 import {SettingsController as controller} from './settings.controller';
 
@@ -11,6 +11,7 @@ let SettingsComponent = function () {
         scope: {
             gameMode: '=',
             isGameFinished: '=',
+            remainingPairsNum: '=',
             startGame: '&onStartGame',
             username: '='
         },

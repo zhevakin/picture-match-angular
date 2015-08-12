@@ -10,6 +10,7 @@ class GameController {
         this.card2 = null;
         this.pairedCardsIds = [];
         this.isGameFinished = false;
+        this.remainingPairsNum = 10;
 
         this.gameMode = 'user';
         this.username = 'privatekanye';
@@ -25,6 +26,7 @@ class GameController {
             this.card2 = null;
             this.pairedCardsIds = [];
             this.isGameFinished = false;
+            this.remainingPairsNum = 10;
         });
     }
 
@@ -55,6 +57,7 @@ class GameController {
             this.card2 = card;
             if (this.card1.id === this.card2.id) {
                 this.pairedCardsIds.push(card.id);
+                this.remainingPairsNum = this.cards.length / 2 - this.pairedCardsIds.length;
                 if (this.pairedCardsIds.length === this.cards.length / 2) {
                     this.gameFinished();
                 }
