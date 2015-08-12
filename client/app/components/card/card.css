@@ -1,45 +1,43 @@
 .card {
-  border: 10px solid #fff;
-  box-shadow: 2px 2px 10px #ccc;
-  cursor: pointer;
-  float: left;
-  height: 150px;
-  margin: 0 10px 10px 0;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-  width: 150px;
+    border: 10px solid #fff;
+    box-shadow: 2px 2px 10px #ccc;
+    cursor: pointer;
+    float: left;
+    height: 150px;
+    margin: 0 10px 10px 0;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    width: 150px;
 }
 
 .card-front {
-  background-color: #fff;
-  backface-visibility: hidden;
-  display: block;
-  height: 100%;
-  position: absolute;
-  width: 100%;
+    background-color: #fff;
+    backface-visibility: hidden;
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
 }
 
 .card-back {
-  backface-visibility: hidden;
-  display: block;
-  position: absolute;
-  height: 100%;
-  transform: rotateY(180deg);
-  width: 100%;
+    backface-visibility: hidden;
+    display: block;
+    position: absolute;
+    height: 100%;
+    transform: rotateY(180deg);
+    width: 100%;
 }
 
 .card-img {
-  display: block;
-  width: 100%;
+    display: block;
+    width: 100%;
 }
 
-// Modifications
-.card {
-  &.m-selected {
+/* Modifications*/
+.card.m-selected {
     transform: rotateY(180deg);
-  }
+}
 
-  &.m-paired {
+.card.m-paired {
     transform: rotateY(180deg);
-  }
 }
